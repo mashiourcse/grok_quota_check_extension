@@ -23,7 +23,7 @@ A Chrome sidebar extension that displays your Grok Imagine image/video quotas di
 
 ## 1. Download the Extension
 
-Download and extract the extension ZIP file.
+Click on the code button in the repo and then download zip, Download and extract the extension ZIP file.
 
 You should see files like:
 
