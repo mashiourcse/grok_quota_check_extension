@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Grok Imagine Sidebar",
+  "version": "1.1.0",
+  "description": "Sidebar for Grok Imagine quota info",
+  "permissions": [
+    "sidePanel"
+  ],
+  "host_permissions": [
+    "https://grok.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "action": {
+    "default_title": "Open Grok Sidebar"
+  }
+}

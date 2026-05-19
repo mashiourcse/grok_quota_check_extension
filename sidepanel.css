@@ -1,0 +1,168 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0f0f0f;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  padding: 16px;
+  border-bottom: 1px solid #222;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  background: #1d9bf0;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+  padding: 20px;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  
+  background: linear-gradient(
+    145deg,
+    #1a1d29,
+    #12141c
+  );
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  border-radius: 18px;
+
+  padding: 18px;
+
+  transition: all 0.25s ease;
+
+  box-shadow:
+    0 6px 18px rgba(0,0,0,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.45);
+}
+
+.status-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 6px;
+}
+
+.status-green .status-bar {
+  background: linear-gradient(
+    90deg,
+    #00ff99,
+    #00c853
+  );
+
+  box-shadow: 0 0 12px #00ff99;
+}
+
+.status-red .status-bar {
+  background: linear-gradient(
+    90deg,
+    #ff4d4d,
+    #d50000
+  );
+
+  box-shadow: 0 0 12px #ff4d4d;
+}
+
+.card-title {
+  font-size: 14px;
+  opacity: 0.75;
+  margin-bottom: 10px;
+  letter-spacing: 0.3px;
+  text-align: start;
+}
+
+.card-value {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 8px;
+  text-align: end;
+}
+
+.small {
+  margin-top: 10px;
+  font-size: 12px;
+  opacity: 0.65;
+}
+
+.loading-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.loader {
+  width: 18px;
+  height: 18px;
+
+  border: 3px solid rgba(255,255,255,0.2);
+  border-top-color: white;
+  border-radius: 50%;
+
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+button {
+  background: linear-gradient(
+    135deg,
+    #4f46e5,
+    #7c3aed
+  );
+
+  color: white;
+  border: none;
+
+  padding: 12px 18px;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
