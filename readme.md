@@ -168,4 +168,4 @@ Make sure:
 
 # License
 
-Personal use only.
+Opensource, not a commercial product.

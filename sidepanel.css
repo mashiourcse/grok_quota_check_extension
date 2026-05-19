@@ -34,94 +34,167 @@ button {
 
 #cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 16px;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+
   padding: 20px;
 }
 
-.card {
-  position: relative;
-  overflow: hidden;
-  
-  background: linear-gradient(
-    145deg,
-    #1a1d29,
-    #12141c
-  );
+.service-card {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(25,28,40,0.95),
+      rgba(14,16,24,0.98)
+    );
 
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.06);
 
-  border-radius: 18px;
+  border-radius: 20px;
 
   padding: 18px;
 
-  transition: all 0.25s ease;
+  backdrop-filter: blur(10px);
 
   box-shadow:
-    0 6px 18px rgba(0,0,0,0.35),
+    0 10px 30px rgba(0,0,0,0.35),
     inset 0 1px 0 rgba(255,255,255,0.04);
+
+  transition: 0.25s ease;
 }
 
-.card:hover {
+.service-card:hover {
   transform: translateY(-4px);
+
   box-shadow:
-    0 12px 30px rgba(0,0,0,0.45);
+    0 14px 40px rgba(0,0,0,0.45);
 }
 
-.status-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
+.service-header {
+  display: flex;
 
-  width: 100%;
-  height: 6px;
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 18px;
 }
 
-.status-green .status-bar {
-  background: linear-gradient(
-    90deg,
-    #00ff99,
-    #00c853
-  );
-
-  box-shadow: 0 0 12px #00ff99;
-}
-
-.status-red .status-bar {
-  background: linear-gradient(
-    90deg,
-    #ff4d4d,
-    #d50000
-  );
-
-  box-shadow: 0 0 12px #ff4d4d;
-}
-
-.card-title {
-  font-size: 14px;
-  opacity: 0.75;
-  margin-bottom: 10px;
-  letter-spacing: 0.3px;
-  text-align: start;
-}
-
-.card-value {
-  font-size: 20px;
+.service-title {
+  font-size: 16px;
   font-weight: 700;
-  margin-top: 8px;
-  text-align: end;
 }
 
-.small {
-  margin-top: 10px;
+.status-btn {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  border: none;
+
+  border-radius: 999px;
+
+  padding: 8px 14px;
+
   font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.4px;
+}
+
+.status-btn.active {
+  background: rgba(0,255,140,0.12);
+
+  color: #00ff99;
+
+  border: 1px solid rgba(0,255,140,0.3);
+}
+
+.status-btn.inactive {
+  background: rgba(255,60,60,0.12);
+
+  color: #ff6666;
+
+  border: 1px solid rgba(255,60,60,0.3);
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+}
+
+.active .dot {
+  background: #00ff99;
+
+  box-shadow: 0 0 10px #00ff99;
+}
+
+.inactive .dot {
+  background: #ff4d4d;
+
+  box-shadow: 0 0 10px #ff4d4d;
+}
+
+.stats-row {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 12px;
+}
+
+.stat-box {
+  background: rgba(255,255,255,0.03);
+
+  border: 1px solid rgba(255,255,255,0.05);
+
+  border-radius: 16px;
+
+  padding: 14px;
+
+  text-align: center;
+}
+
+.stat-label {
+  font-size: 12px;
+
   opacity: 0.65;
+
+  margin-bottom: 8px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.8px;
+}
+
+.stat-value {
+  font-size: 22px;
+
+  font-weight: 700;
+}
+
+.small-text {
+  font-size: 13px;
+  line-height: 1.4;
 }
 
 .loading-card {
   display: flex;
+
   align-items: center;
+
   gap: 12px;
+
+  padding: 30px;
+
+  font-size: 18px;
 }
 
 .loader {
@@ -129,40 +202,59 @@ button {
   height: 18px;
 
   border: 3px solid rgba(255,255,255,0.2);
+
   border-top-color: white;
+
   border-radius: 50%;
 
   animation: spin 1s linear infinite;
+}
+
+.error-card {
+  border: 1px solid rgba(255,0,0,0.2);
+}
+
+button {
+  background:
+    linear-gradient(
+      135deg,
+      #5b4dff,
+      #7c3aed
+    );
+
+  color: white;
+
+  border: none;
+
+  border-radius: 14px;
+
+  padding: 12px 18px;
+
+  cursor: pointer;
+
+  font-weight: 700;
+
+  transition: 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  #cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  #cards {
+    grid-template-columns: 1fr;
+  }
 }
 
 @keyframes spin {
   to {
     transform: rotate(360deg);
   }
-}
-
-button {
-  background: linear-gradient(
-    135deg,
-    #4f46e5,
-    #7c3aed
-  );
-
-  color: white;
-  border: none;
-
-  padding: 12px 18px;
-
-  border-radius: 12px;
-
-  cursor: pointer;
-
-  font-weight: 600;
-
-  transition: 0.2s;
-}
-
-button:hover {
-  transform: translateY(-2px);
-  opacity: 0.95;
 }
