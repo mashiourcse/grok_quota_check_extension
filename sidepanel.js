@@ -2,8 +2,8 @@ const cards = document.getElementById("cards");
 const refreshBtn = document.getElementById("refreshBtn");
 
 function createServiceCard(title, data) {
-  const isActive = data.available;
-
+  const isActive = data.available && (data.remainingQueries === null || data.remainingQueries > 0);
+  console.log(isActive);
   return `
     <div class="service-card">
 
