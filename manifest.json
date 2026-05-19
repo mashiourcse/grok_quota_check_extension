@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Grok Imagine Sidebar",
+  "name": "Grok Imagine Qouta Checker",
   "version": "1.1.0",
   "description": "Sidebar for Grok Imagine quota info",
   "permissions": [
