@@ -9,11 +9,21 @@
   "host_permissions": [
     "https://grok.com/*"
   ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "grok-quota-checker@example.com"
+    }
+  },
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "background.js",
+    "scripts": ["background.js"]
   },
   "side_panel": {
     "default_path": "sidepanel.html"
+  },
+  "sidebar_action": {
+    "default_panel": "sidepanel.html",
+    "default_title": "Open Grok Sidebar"
   },
   "action": {
     "default_title": "Open Grok Sidebar"
